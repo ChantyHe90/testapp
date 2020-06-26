@@ -19,7 +19,7 @@ const httpServer = http.createServer((req, res) => {
     
     </style>
     <body>
-    <h1 id="text">You use: ${API_URL}</h1>
+    <h1 id="text">You succesfully use: ${API_URL}</h1>
     <pre style="color: red;" id="error-message"></pre>
     <script>
     const protocol = ${PROTOCOL} || location.protocol;
@@ -29,7 +29,7 @@ const httpServer = http.createServer((req, res) => {
     }, (error) => {
       document.getElementById("error-message").textContent = "FAILED: GET " + quote_url;
     }).then((quote) => {
-      document.getElementById("text").textContent = "You connected ${API_URL}"
+      document.getElementById("text").textContent = "You need to connect ${API_URL} and [PROTOCOL]"
     }, (error) => {
       document.getElementById("error-message").textContent = "REQUESTED: GET " + quote_url + "\\nFAILED: " + error;
     });
